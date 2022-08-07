@@ -2,7 +2,7 @@
   <div class="header">
     <div class="wrap">
       <div class="logo">
-        <p>百战购物商城</p>
+        <p>优思安商城</p>
       </div>
       <Search />
       <Cart />

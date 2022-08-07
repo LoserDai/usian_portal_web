@@ -34,7 +34,7 @@
                 <li class="top-nav-spacer"></li>
                 <li class="yigou">
                     <div class="top-nav-a">
-                        <a href="#">我的百战</a>
+                        <a href="#">我的优思安</a>
                         <i class="iconfont"></i>
                     </div>
                     <div class="top_hidden top_hidden1">
@@ -44,7 +44,7 @@
 
                 <li class="top-nav-spacer"></li>
                 <li>
-                    <a href="#">百战会员</a>
+                    <a href="#">优思安会员</a>
                 </li>
                 <li class="top-nav-spacer"></li>
                 <li class="enterprise">
@@ -78,7 +78,7 @@
                 </li>
                 <li class="top-nav-spacer"></li>
                 <li>
-                    <span>手机百战</span>
+                    <span>手机优思安</span>
                 </li>
             </ul>
         </div>
@@ -106,12 +106,16 @@ export default {
         ...mapState(["username", "loginToken"]),
         getToken() {
             if (localStorage.getItem("loginToken")) {
-                this.isHave = false;
-                // this.value=this.username;
+                this.$api.getUserByToken(localStorage.getItem("loginToken")).then(res => {
+                      if (res.data.status === 200) {
+                         this.isHave = false;
+                      }else{
+                        localStorage.removeItem("loginToken");
+                        localStorage.removeItem("username");
+                        localStorage.removeItem("userid");
+                      }
+                  });
             }
-            // else{
-            //   this.value='你好,请登录';
-            // }
             return this.isHave;
         }
     },

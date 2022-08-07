@@ -2,7 +2,7 @@
     <div class="searchHeader">
         <div class="search">
             <div class="logo">
-                <p>百战购物商城</p>
+                <p>优思安商城</p>
             </div>
             <div class="search-left">
                 <div class="from">
@@ -24,7 +24,6 @@
             </div>
         </div>
         <CommonSearchList :data="headerList" />
-        <Cart />
     </div>
 </template>
 <script>

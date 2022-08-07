@@ -9,7 +9,7 @@
       </p>
       <p class="product-des">
         <a href="##">
-          <span class="des-one">京东超市</span>
+          <span class="des-one">优思安超市</span>
           <span v-html="item.item_title"></span>
         </a>
       </p>
@@ -20,7 +20,7 @@
       </p>
       <p class="product-shop">
         <a href="##">
-          伊利母婴京东自营旗舰店
+          优思安自营旗舰店
           <img src="../../../../../../assets/img/search/3.png" alt title="联系客服" />
         </a>
       </p>
@@ -78,8 +78,8 @@ export default {
   // 图片
   .item-img {
     img {
-      width: 210px;
-      height: 220px;
+      width: 186px;
+      height: 190px;
     }
   }
   // 商品的描述

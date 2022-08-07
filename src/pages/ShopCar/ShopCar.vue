@@ -3,7 +3,7 @@
         <TopList />
         <div class="header">
             <p class="ego">
-                <a href="##">百战购物商城</a>
+                <a href="##">优思安购物商城</a>
             </p>
             <p class="shopcar-search">
                 <input type="text" placeholder="自营" />

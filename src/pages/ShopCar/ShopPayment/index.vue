@@ -3,7 +3,7 @@
         <TopNav />
         <div class="ShopPayment">
             <div class="logo">
-                <h1 style="color:red;">百战购物商城</h1>
+                <h1 style="color:red;">优思安购物商城</h1>
             </div>
             <div class="bar"></div>
         </div>
@@ -20,9 +20,9 @@
                 </div>
                 <!--收件人地址  -->
                 <div class="order_info">
-                    <div class="order_info_name">Sev</div>
+                    <div class="order_info_name">刘强东</div>
                     <div class="order_info_name_address">
-                        <span>Sev</span>
+                        <span>刘强东</span>
                         <span>北京朝阳区</span>
                         <span>123456779</span>
                     </div>
@@ -34,12 +34,11 @@
                         <span class="order_info_pick_every">随时取</span>
                         <span class="details">详情</span>
                     </div>
-                    <div class="order_info_name">Sev</div>
+                    <div class="order_info_name">刘强东</div>
                     <div class="order_info_name_address">
-                        <span>Sev</span>
                         <span>蓝筹名座自提柜</span>
                         <span>北京市朝阳区吉</span>
-                        <span>Sev</span>
+                        <span>刘强东</span>
                         <span>123456779</span>
                         <span>距收货人 2.7千米</span>
                         <span id="distance">距离最近</span>
@@ -129,7 +128,7 @@
                 </div>
                 <div class="hr"></div>
             </div>
-            <el-button class="btn" @click.once="commitOrder">提交订单</el-button>
+            <el-button class="btn" @click="commitOrder">提交订单</el-button>
         </div>
     </div>
 </template>
@@ -149,7 +148,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(["cartcookie","userid"])
+        ...mapState(["cartcookie","userid","loginToken"])
     },
     methods: {
         // 参数格式转化
@@ -185,14 +184,15 @@ export default {
                     orderItem: JSON.stringify(this.formatParams(this.product)),
                     cartKey:this.formatCookie(this.cartcookie),
                     userId:this.userid,
-                    receiverName: "尚学堂",
+                    paymentType: 1,
+                    payment: 20000,
+                    receiverName: "刘强东",
                     receiverMobile: "15891588888",
                     receiverState: "北京",
                     receiverCity: "北京",
                     receiverDistrict: "昌平区",
                     receiverAddress: "西三旗 xxxxxxxxx",
-                    paymentType: 1,
-                    payment: 20000
+                    token: this.loginToken
                 })
                 .then(res => {
                     if(res.data.status === 200){
@@ -201,7 +201,9 @@ export default {
                             params:{order:res.data.data}
                         })
                     }else{
-                        console.log("请求失败");
+                        this.$router.push({
+                                path:"/login"
+                        })
                     }
                 });
         }

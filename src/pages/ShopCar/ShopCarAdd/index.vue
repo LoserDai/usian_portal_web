@@ -3,7 +3,7 @@
         <TopNav/>
         <div class="search">
             <div class="logo">
-                <h1 style="color:red;">百战购物商城</h1>
+                <h1 style="color:red;">优思安购物商城</h1>
                 <!-- <span class="car">购物车</span> -->
             </div>
             <div class="input">
@@ -35,6 +35,7 @@
                             <div class="succ_icon"></div>
                             <div class="succ_text">加入购物车成功</div>
                         </div>
+                        <!--
                         <div class="success_down">
                             <div class="success_down_left">
                                 <div class="success_down_left_img">
@@ -52,9 +53,10 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                     <div class="success_wrap_conter_right">
-                        <p class="success_wrap_conter_right_text">查看商品详情</p>
+                        <a href="javascript:history.go(-1)"><p class="success_wrap_conter_right_text">查看商品详情</p></a>
                         <button @click="goCartShop" class="btn">去购物车</button>
                     </div>
                 </div>
@@ -411,7 +413,7 @@ float: left;
     float: left;
 }
 .success_wrap{
-    height: 145px;
+    height: 108px;
     background: #f5f5f5;
     margin-bottom: 20px;
 }
@@ -421,9 +423,10 @@ float: left;
 }
 .success_wrap_conter_left{
     float: left;
+    padding-top: 25px;
 }  
 .success_wrap_conter_right{
-    padding-top: 92px;
+    padding-top: 38px;
     float: right;
     overflow: hidden;
 }

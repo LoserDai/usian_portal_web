@@ -38,23 +38,29 @@ const api={
     checkRegister(value,flag){
         return axios.get(base.registerBaseUrl+base.checkRegister+"/"+value+"/"+flag);
     },
+    /**
+     *通过token查询用户信息
+     */
+    getUserByToken(token){
+        return axios.get(base.registerBaseUrl+base.getUserByToken+"/"+token);
+    },
     /*
      * 详情页 详情接口
      */
     getSelectItemInfo(params){
-        return axios.post(base.baseUrl+base.selectItemInfo,params);
+        return axios.post(base.detailBaseUrl+base.selectItemInfo,params);
     },
     /**
      * 详情页 商品展示
      */
     getSelectItemDescByItemId(params){
-        return axios.post(base.baseUrl+base.selectItemDescByItemId,params);
+        return axios.post(base.detailBaseUrl+base.selectItemDescByItemId,params);
     },
     /**
      * 详情页 规格参数
      */
     getSelectTbItemParamItemByItemId(params){
-        return axios.post(base.baseUrl+base.selectTbItemParamItemByItemId,params)
+        return axios.post(base.detailBaseUrl+base.selectTbItemParamItemByItemId,params)
     },
     /**
      * 加入购物车
@@ -102,7 +108,7 @@ const api={
      * 去结算接口
      */
     getItemList(params){
-        return axios.post(base.shopcarBaseUrl + base.getItemList,params);
+        return axios.post(base.payMentBaseUrl + base.getItemList,params);
     },
     /**
      * 提交订单

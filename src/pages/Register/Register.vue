@@ -4,21 +4,21 @@
                 <div id="step2-wrap">
                     <div class="form-item form-item-account" id="form-item-account">
                         <label>用　户　名</label>
-                        <input type="text"  class="field" v-focus="picFocusStatus" v-model="userInfo.username" placeholder="您的账户名和登录名" @blur="checkReg(1)">
+                        <input type="text"  class="field" v-focus="picFocusStatus" @blur="checkReg(1)" v-model="userInfo.username" placeholder="请输入长度为4到16位用户名">
                     </div>
                     <div class="input-tip">
                         <span></span>
                     </div>
                     <div class="form-item">
                         <label>设 置 密 码</label>
-                        <input autocomplete="off" type="password" v-model="userInfo.password" class="field" placeholder="建议使用两种或两种以上字符组合" >                      
+                        <input autocomplete="off" type="password" v-model="userInfo.password" class="field" placeholder="请输入6到20位的密码">
                    </div>   
                    <div class="input-tip">
                         <span></span>
                     </div>               
                     <div class="form-item">
                         <label>电 话 号 码</label>
-                        <input type="text"  class="field"  v-model="userInfo.phone" placeholder="请输入电话号码"  @blur="checkReg(2)">
+                        <input type="text"  class="field" @blur="checkReg(2)" v-model="userInfo.phone" placeholder="请输入电话号码">
                    </div>
                    <div class="input-tip">
                         <span></span>
@@ -62,9 +62,9 @@ export default {
             if (this.userInfo.username.trim() == "" || !userPattern.test(this.userInfo.username)) {
                 this.$message.error('请输入正确的用户名 长度为4到16位');
                 return;
-            } 
+            }
              if (this.userInfo.password.trim() == "" || !pwdPattern.test(this.userInfo.password)) {
-                this.$message.error('请输入正确的密码');
+                this.$message.error('请输入6到20位的密码');
                 return;
             } 
              if (this.userInfo.phone.trim() == "" || !telPattern.test(this.userInfo.phone)) {
